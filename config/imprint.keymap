@@ -36,7 +36,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRL_AXCV";
             #binding-cells = <0>;
-            bindings = <&kp LC(A)>, <&kp LC(X)>, <&kp LC(C)>, <&kp LC(V)>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LC(X) LC(A)>, <&kp LC(C)>, <&kp LC(V)>;
         };
 
         alt_ctrlz: alt_ctrlz {
