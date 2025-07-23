@@ -107,14 +107,14 @@
 
         Auto_Mouse_Layer {
             bindings = <
-&trans  &trans  &trans     &trans     &trans    &trans            &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans            &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans            &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &mkp LCLK  &mkp MCLK  &mkp MB2  &trans            &trans  &mkp LCLK       &mkp MCLK       &mkp MB2         &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans            &trans  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
-                &trans     &trans                                                         &mmv MOVE_DOWN  &mmv MOVE_RIGHT
-                                      &trans    &trans  &trans    &trans  &trans          &trans
-                                      &trans    &trans  &trans    &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &msc SCRL_UP    &mkp LCLK       &mkp MCLK       &mkp MB2         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
+                &trans  &trans                                                            &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+                                &trans  &trans  &trans    &trans          &trans          &mkp LCLK
+                                &trans  &trans  &trans    &trans          &trans          &mkp MB2
             >;
         };
     };
@@ -124,7 +124,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,
+        // this gets it to the default installation orientation,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 
     // activate layer 3 within 500ms of the trackball moving
@@ -135,12 +135,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,
+        // this gets it to the default installation orientation,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
