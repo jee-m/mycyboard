@@ -89,20 +89,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
-
-        gui_layer1: gui_layer1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "GUI_LAYER1";
-            #binding-cells = <0>;
-            bindings = <&lt 1 LEFT_GUI>;
-        };
-
-        softoff: softoff {
-            compatible = "zmk,behavior-soft-off";
-            label = "SOFTOFF";
-            #binding-cells = <0>;
-            split-peripheral-off-on-press;
-        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -112,27 +98,27 @@
 
         default_layer {
             bindings = <
-&none          &none   &none        &none     &none          &none                      &none          &none      &none      &none              &none     &none
-&esc_tilde     &kp N1  &kp N2       &kp N3    &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL      &kp Q   &kp W        &kp E     &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB        &kp A   &kp S        &kp D     &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&kp LC(LA(M))  &kp Z   &kp X        &kp C     &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                       &gui_layer1  &softoff                                                                      &kp LBKT   &kp RIGHT_BRACKET
-                                              &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &sft_apho
-                                              &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
+&none          &none   &none         &none   &none          &none                      &none          &none      &none      &none              &none     &none
+&esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL      &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                       &kp LEFT_GUI  &mo 1                                                                       &kp LBKT   &kp RIGHT_BRACKET
+                                             &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &sft_apho
+                                             &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
         Layer_1 {
             bindings = <
-&trans      &trans     &trans  &trans         &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
-&kp LA(F4)  &kp LC(W)  &trans  &trans         &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans  &trans         &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans  &mkp MCLK      &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
-&trans      &trans     &trans  &trans         &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-                       &trans  &kp LC(LS(T))                                                                              &kp DOWN      &kp RIGHT
-                                              &trans              &trans               &trans    &trans         &trans    &trans
-                                              &trans              &trans               &trans    &trans         &trans    &trans
+&trans      &trans     &trans         &trans     &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
+&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
+&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &trans
+                       &kp LC(LS(T))  &trans                                                                                 &kp DOWN      &kp RIGHT
+                                                 &trans              &trans               &trans    &trans         &trans    &trans
+                                                 &trans              &trans               &trans    &trans         &trans    &trans
             >;
         };
 
@@ -155,7 +141,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 
     // activate layer 3 within 500ms of the trackball moving
@@ -166,12 +152,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
