@@ -84,10 +84,10 @@
             mods = <(MOD_LSFT)>;
         };
 
-        brace_softoff: brace_softoff {
+        key_softoff: key_softoff {
             compatible = "zmk,behavior-hold-tap";
-            label = "BRACE_SOFTOFF";
-            bindings = <&none>, <&kp>;
+            label = "KEY_SOFTOFF";
+            bindings = <&soft_off>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
@@ -100,12 +100,12 @@
 
         default_layer {
             bindings = <
-&none          &none   &none     &none   &none          &none                      &none          &none      &none      &none                           &none     &none
-&esc_tilde     &kp N1  &kp N2    &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9                          &kp N0    &kp MINUS
-&kp EQUAL      &kp Q   &kp W     &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O                           &kp P     &kp BSLH
-&kp TAB        &kp A   &kp S     &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L                           &kp SEMI  &kp SQT
-&kp LC(LA(M))  &kp Z   &kp X     &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT                         &kp FSLH  &win_d_ctsf_esc
-                       &kp LGUI  &mo 1                                                                       &kp LBKT   &brace_softoff 0 RIGHT_BRACKET
+&none          &none   &none     &none   &none          &none                      &none          &none      &none      &none                         &none     &none
+&esc_tilde     &kp N1  &kp N2    &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9                        &kp N0    &kp MINUS
+&kp EQUAL      &kp Q   &kp W     &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O                         &kp P     &kp BSLH
+&kp TAB        &kp A   &kp S     &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L                         &kp SEMI  &kp SQT
+&kp LC(LA(M))  &kp Z   &kp X     &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT                       &kp FSLH  &win_d_ctsf_esc
+                       &kp LGUI  &mo 1                                                                       &kp LBKT   &key_softoff 0 RIGHT_BRACKET
                                          &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &sft_apho
                                          &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
@@ -143,7 +143,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 
     // activate layer 3 within 500ms of the trackball moving
@@ -154,12 +154,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
