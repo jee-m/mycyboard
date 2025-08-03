@@ -17,12 +17,6 @@
         };
     };
 
-    kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-    };
-
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
             compatible = "zmk,behavior-tap-dance";
