@@ -89,13 +89,38 @@
         compatible = "zmk,combos";
 
         space_combo {
-            bindings = <&kp SPACE>;
+            bindings = <&kp ENTER>;
             key-positions = <43 44>;
         };
 
-        enter_combo {
-            bindings = <&kp ENTER>;
+        quote_combo {
+            bindings = <&kp RS(SQT)>;
             key-positions = <44 45>;
+        };
+
+        qmark_combo {
+            bindings = <&kp QUESTION>;
+            key-positions = <40 39>;
+        };
+
+        excl_combo {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <39 38>;
+        };
+
+        ctrlc_combo {
+            bindings = <&kp LC(C)>;
+            key-positions = <72 52>;
+        };
+
+        ctrlv_combo {
+            bindings = <&kp LC(V)>;
+            key-positions = <72 53>;
+        };
+
+        alttab_combo {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <41 40>;
         };
     };
 
@@ -147,7 +172,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 
     // activate layer 3 within 500ms of the trackball moving
@@ -158,12 +183,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
