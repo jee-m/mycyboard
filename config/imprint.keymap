@@ -83,6 +83,16 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        mo_tog_layer: mo_tog_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_TOG_LAYER";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
     };
 
     combos {
@@ -98,24 +108,14 @@
             key-positions = <44 45>;
         };
 
-        qmark_combo {
-            bindings = <&kp QUESTION>;
-            key-positions = <40 39>;
-        };
-
-        excl_combo {
-            bindings = <&kp EXCLAMATION>;
-            key-positions = <39 38>;
-        };
-
         ctrlc_combo {
             bindings = <&kp LC(C)>;
-            key-positions = <72 52>;
+            key-positions = <52 53>;
         };
 
         ctrlv_combo {
             bindings = <&kp LC(V)>;
-            key-positions = <72 53>;
+            key-positions = <53 41>;
         };
 
         alttab_combo {
@@ -129,14 +129,14 @@
 
         default_layer {
             bindings = <
-&none          &none   &none         &none   &none          &none                      &none          &none      &none      &none              &none     &none
-&esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL      &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                       &kp LEFT_GUI  &mo 1                                                                       &kp LBKT   &kp RIGHT_BRACKET
-                                             &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &sft_apho
-                                             &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
+&none          &none   &none         &none   &none          &none                      &none          &none              &none      &none              &none     &none
+&esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7             &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL      &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U              &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J              &kp K      &kp L              &kp SEMI  &kp SQT
+&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M              &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                       &kp LEFT_GUI  &mo 1                                                                               &kp LBKT   &kp RIGHT_BRACKET
+                                             &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo_tog_layer 1 1  &sft_apho
+                                             &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER          &kp SPACE
             >;
         };
 
@@ -172,7 +172,7 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 
     // activate layer 3 within 500ms of the trackball moving
@@ -183,12 +183,12 @@
 
 &trackball_central_listener {
     input-processors =
-        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,
+        // this gets it to the default installation orientation,,,,,,,,,,,,,,,,,,,
         <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,,,,,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,,,,,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
