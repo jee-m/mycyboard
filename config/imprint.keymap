@@ -15,6 +15,24 @@
 
             label = "NEW_MACRO";
         };
+
+    em_dash: em_dash {
+            compatible = "zmk,behavior-macro";
+            label = "EM_DASH";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LALT>, <&kp KP_N0>, <&kp KP_N1>, <&kp KP_N5>, <&kp KP_N1>, <&kp LALT>;
+        };
+
+        ellipsis: ellipsis {
+            compatible = "zmk,behavior-macro";
+            label = "ELLIPSIS";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LALT>, <&kp KP_N0>, <&kp KP_N1>, <&kp KP_N3>, <&kp KP_N3>, <&kp LALT>;
+        };
     };
 
     behaviors {
@@ -102,6 +120,21 @@
             quick-tap-ms = <200>;
         };
 
+        semicolon_emdash: semicolon_emdash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SEMICOLON_EMDASH";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SEMI>, <&em_dash>;
+        };
+
+        period_ellipsis: period_ellipsis {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PERIOD_ELLIPSIS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOT>, <&ellipsis>;
+        };
     };
 
     combos {
@@ -141,8 +174,8 @@
 &none          &none   &none         &none   &none          &none                      &none          &none              &none      &none              &none     &none
 &esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7             &kp N8     &kp N9             &kp N0    &kp MINUS
 &kp EQUAL      &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U              &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J              &kp K      &kp L              &kp SEMI  &kp SQT
-&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M              &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+&kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J              &kp K      &kp L              &semicolon_emdash  &kp SQT
+&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M              &kp COMMA  &period_ellipsis   &kp FSLH  &win_d_ctsf_esc
                        &kp LEFT_GUI  &mo 1                                                                               &kp LBKT   &kp RIGHT_BRACKET
                                              &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo_td_layer1  &sft_apho
                                              &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER          &kp SPACE
