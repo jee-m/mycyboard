@@ -144,7 +144,7 @@
 &kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J              &kp K      &kp L              &kp SEMI  &kp SQT
 &kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M              &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
                        &kp LEFT_GUI  &mo 1                                                                               &kp LBKT   &kp RIGHT_BRACKET
-                                             &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo_tog_layer1  &sft_apho
+                                             &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo_td_layer1  &sft_apho
                                              &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER          &kp SPACE
             >;
         };
