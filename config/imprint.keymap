@@ -7,41 +7,6 @@
 / {
     chosen { zmk,matrix-transform = &imprint_function_row; };
 
-        macros {
-        em_dash: em_dash {
-            compatible = "zmk,behavior-macro";
-            label = "EM_DASH";
-            #binding-cells = <0>;
-            wait-ms = <60>;
-            tap-ms = <60>;
-            bindings = <
-                &kp LALT
-                &kp N0
-                &kp N1
-                &kp N5
-                &kp N1
-                &kp LALT
-            >;
-        };
-
-        ellipsis: ellipsis {
-            compatible = "zmk,behavior-macro";
-            label = "ELLIPSIS";
-            #binding-cells = <0>;
-            wait-ms = <60>;
-            tap-ms = <60>;
-            bindings = <
-                &kp LALT
-                &kp N0
-                &kp N1
-                &kp N3
-                &kp N3
-                &kp LALT
-            >;
-        };
-    };
-
-
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
             compatible = "zmk,behavior-tap-dance";
@@ -170,8 +135,8 @@
 &trans      &trans     &trans         &trans     &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
 &kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
 &trans      &trans     &trans         &trans     &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &em_dash   &kp C_MUTE
-&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &ellipsis   &trans
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
+&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &trans
                        &kp LC(LS(T))  &trans                                                                                 &kp DOWN      &kp RIGHT
                                                  &trans              &trans               &trans    &trans         &trans    &trans
                                                  &trans              &trans               &trans    &trans         &trans    &trans
