@@ -3,8 +3,4 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      shield: |
-        - imprint_left
-        - imprint_right
-        - settings_reset
+    secrets: inherit
