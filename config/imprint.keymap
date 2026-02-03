@@ -83,7 +83,7 @@
         };
     };
 
-   combos {
+    combos {
         compatible = "zmk,combos";
 
         space_combo {
@@ -118,7 +118,7 @@
 
         reset_combo {
             timeout-ms = <40>;
-            key-positions = <56 61>; 
+            key-positions = <64 69>;
             bindings = <&sys_reset>;
         };
     };
@@ -166,4 +166,3 @@
         };
     };
 };
-
