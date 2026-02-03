@@ -82,17 +82,12 @@
             quick-tap-ms = <200>;
         };
 
-        clear_partials: clear_partials {
-            compatible = "zmk,behavior-modifier-reset";
-            #binding-cells = <0>;
-        };
-
         clean_up: clean_up {
             compatible = "zmk,behavior-tap-dance";
             label = "CLEAN_UP_SHIFT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&clear_partials>;
+            bindings = <&kp LSHIFT>, <&kp K_CANCEL>;
         };
     };
 
