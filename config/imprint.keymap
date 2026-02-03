@@ -10,6 +10,8 @@
     macros {
         unstick: unstick {
             compatible = "zmk,behavior-macro";
+            label = "UNSTICK";
+            #binding-cells = <0>;
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL 
                         &kp LALT &kp RALT &kp LGUI &kp RGUI>;
         };
@@ -97,28 +99,33 @@
         compatible = "zmk,combos";
 
         space_combo {
-            bindings = <&kp ENTER>;
+            timeout-ms = 40;
             key-positions = <43 44>;
+            bindings = <&kp ENTER>;
         };
 
         quote_combo {
-            bindings = <&kp RS(SQT)>;
+            timeout-ms = 40;
             key-positions = <44 45>;
+            bindings = <&kp RS(SQT)>;
         };
 
         ctrlc_combo {
-            bindings = <&kp LC(C)>;
+            timeout-ms = 40;
             key-positions = <52 53>;
+            bindings = <&kp LC(C)>;
         };
 
         ctrlv_combo {
-            bindings = <&kp LC(V)>;
+            timeout-ms = 40;
             key-positions = <53 41>;
+            bindings = <&kp LC(V)>;
         };
 
         alttab_combo {
-            bindings = <&kp LA(TAB)>;
+            timeout-ms = 40;
             key-positions = <41 40>;
+            bindings = <&kp LA(TAB)>;
         };
 
         unstick_combo {
