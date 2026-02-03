@@ -9,16 +9,31 @@
         ellip: ellip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <30>;
+            tap-ms = <30>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&kp KP_N0>, 
-                <&kp KP_N1>, 
-                <&kp KP_N3>, 
+                <&kp KP_N0>,
+                <&kp KP_N1>,
                 <&kp KP_N3>,
-                <&macro_wait_time 20>,
-                <&macro_release &kp LALT>;
+                <&kp KP_N3>,
+                <&macro_release &kp LALT>,
+                <&kp LALT>;
+        };
+
+        emdash: emdash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = 
+                <&macro_press &kp LALT>,
+                <&kp KP_N0>,
+                <&kp KP_N1>,
+                <&kp KP_N5>,
+                <&kp KP_N1>,
+                <&macro_release &kp LALT>,
+                <&kp LALT>;
         };
     };
 
@@ -105,6 +120,14 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp DOT>, <&kp DOT>, <&ellip>;
+        };
+
+        dash_emdash: dash_emdash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DASH_EMDASH";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp MINUS>, <&emdash>;
         };
     };
 
