@@ -9,33 +9,27 @@
         ellip: ellip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <30>;
+            tap-ms = <30>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&kp KP_N0>,
-                <&kp KP_N1>,
-                <&kp KP_N3>,
-                <&kp KP_N3>,
-                <&macro_wait_time 100>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N3 &kp KP_N3>, 
                 <&macro_release &kp LALT>,
-                <&macro_wait_time 50>;
+                <&macro_wait_time 30>,
+                <&kp LSHIFT>;
         };
 
         emdash: emdash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <30>;
+            tap-ms = <30>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&kp KP_N0>,
-                <&kp KP_N1>,
-                <&kp KP_N5>,
-                <&kp KP_N1>,
-                <&macro_wait_time 100>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>, 
                 <&macro_release &kp LALT>,
-                <&macro_wait_time 50>;
+                <&macro_wait_time 30>,
+                <&kp LSHIFT>;
         };
     };
 
