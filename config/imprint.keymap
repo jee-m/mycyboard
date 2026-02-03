@@ -9,31 +9,27 @@
         ellip: ellip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;  // 숫자 사이 간격을 벌려 윈도우가 처리할 틈을 줌
-            tap-ms = <50>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&macro_wait_time 100>,
                 <&kp KP_N0 &kp KP_N1 &kp KP_N3 &kp KP_N3>, 
-                <&macro_wait_time 200>,
                 <&macro_release &kp LALT>,
-                <&macro_wait_time 100>,
-                <&kp LSHIFT>;
+                <&macro_wait_time 50>,
+                <&kp SPACE>;
         };
 
         emdash: emdash {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&macro_wait_time 100>,
                 <&kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>, 
-                <&macro_wait_time 200>, 
                 <&macro_release &kp LALT>,
-                <&macro_wait_time 100>,
-                <&kp LSHIFT>;
+                <&macro_wait_time 50>,
+                <&kp SPACE>;
         };
     };
 
