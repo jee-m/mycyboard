@@ -5,34 +5,6 @@
 / {
     chosen { zmk,matrix-transform = &imprint_function_row; };
 
-    macros {
-        ellip: ellip {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = 
-                <&macro_press &kp LALT>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N3 &kp KP_N3>, 
-                <&macro_release &kp LALT>,
-                <&macro_wait_time 50>,
-                <&kp SPACE>;
-        };
-
-        emdash: emdash {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = 
-                <&macro_press &kp LALT>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N5 &kp KP_N1>, 
-                <&macro_release &kp LALT>,
-                <&macro_wait_time 50>,
-                <&kp SPACE>;
-        };
-    };
-
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
             compatible = "zmk,behavior-tap-dance";
@@ -109,22 +81,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
         };
-
-        dot_ellip: dot_ellip {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DOT_ELLIP";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp DOT>, <&kp DOT>, <&ellip>;
-        };
-
-        dash_emdash: dash_emdash {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DASH_EMDASH";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp MINUS>, <&emdash>;
-        };
     };
 
    combos {
@@ -173,10 +129,10 @@
         default_layer {
             bindings = <
 &none          &none   &none         &none   &none          &none                      &none          &none      &none       &none              &none     &none
-&esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8      &kp N9             &kp N0    &dash_emdash
+&esc_tilde     &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8      &kp N9             &kp N0    &kp MINUS
 &kp EQUAL      &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I       &kp O              &kp P     &kp BSLH
 &kp TAB        &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K       &kp L              &kp SEMI  &kp SQT
-&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA   &dot_ellip         &kp FSLH  &win_d_ctsf_esc
+&kp LC(LA(M))  &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA   &kp DOT            &kp FSLH  &win_d_ctsf_esc
                        &kp LEFT_GUI  &mo 1                                                                       &kp LBKT    &kp RIGHT_BRACKET
                                              &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &sft_qmark
                                              &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
