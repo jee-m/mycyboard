@@ -9,13 +9,13 @@
         ellip: ellip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <20>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = 
                 <&kp R>, 
-                <&macro_wait_time 40>, 
+                <&macro_wait_time 100>, 
                 <&kp LANG_HANJA>, 
-                <&macro_wait_time 85>, 
+                <&macro_wait_time 400>, 
                 <&kp N1>;
         };
     };
