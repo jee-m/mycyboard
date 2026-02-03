@@ -9,11 +9,15 @@
         ellip: ellip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = 
                 <&macro_press &kp LALT>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N3 &kp KP_N3>, // Alt + 0133
+                <&kp KP_N0>, 
+                <&kp KP_N1>, 
+                <&kp KP_N3>, 
+                <&kp KP_N3>,
+                <&macro_wait_time 20>,
                 <&macro_release &kp LALT>;
         };
     };
