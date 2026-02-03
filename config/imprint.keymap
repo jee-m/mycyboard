@@ -7,6 +7,14 @@
 / {
     chosen { zmk,matrix-transform = &imprint_function_row; };
 
+    macros {
+        unstick: unstick {
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL 
+                        &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+        };
+    };
+
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
             compatible = "zmk,behavior-tap-dance";
@@ -111,6 +119,12 @@
         alttab_combo {
             bindings = <&kp LA(TAB)>;
             key-positions = <41 40>;
+        };
+
+        unstick_combo: unstick_combo {
+            timeout-ms = 40;
+            key-positions = <8 16>;
+            bindings = <&unstick>;
         };
     };
 
