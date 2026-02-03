@@ -95,41 +95,41 @@
         };
     };
 
-    combos {
+   combos {
         compatible = "zmk,combos";
 
         space_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <43 44>;
             bindings = <&kp ENTER>;
         };
 
         quote_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <44 45>;
             bindings = <&kp RS(SQT)>;
         };
 
         ctrlc_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <52 53>;
             bindings = <&kp LC(C)>;
         };
 
         ctrlv_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <53 41>;
             bindings = <&kp LC(V)>;
         };
 
         alttab_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <41 40>;
             bindings = <&kp LA(TAB)>;
         };
 
         unstick_combo {
-            timeout-ms = 40;
+            timeout-ms = <40>;
             key-positions = <8 16>;
             bindings = <&unstick>;
         };
