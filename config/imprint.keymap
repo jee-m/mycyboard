@@ -150,14 +150,14 @@
 
         Layer_1 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
-&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
-&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-                       &kp LC(LS(T))  &trans                                                                                 &kp DOWN      &kp RIGHT
-                                                 &bt BT_CLR_ALL      &trans               &trans    &trans         &trans    &trans
-                                                 &trans              &trans               &trans    &trans         &trans    &trans
+&trans       &trans     &trans         &trans     &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
+&kp LA(F4)   &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
+&trans       &trans     &trans         &trans     &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
+&trans       &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
+&bootloader  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &bootloader
+                        &kp LC(LS(T))  &trans                                                                                 &kp DOWN      &kp RIGHT
+                                                  &bt BT_CLR_ALL      &bt BT_SEL 0         &trans    &trans         &trans    &trans
+                                                  &trans              &trans               &trans    &trans         &trans    &trans
             >;
         };
 
