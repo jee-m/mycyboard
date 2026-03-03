@@ -22,11 +22,11 @@
             bindings = <&mt LC(X) LC(A)>, <&kp LC(C)>, <&kp LC(V)>;
         };
 
-        alt_ctrlz: alt_ctrlz {
+        alt_emoji: alt_emoji {
             compatible = "zmk,behavior-tap-dance";
-            label = "ALT_CTRLZ";
+            label = "ALT_EMOJI";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&kp LC(Z)>;
+            bindings = <&kp LEFT_ALT>, <&kp LG(PERIOD)>;
         };
 
         ctrl_enter: ctrl_enter {
@@ -63,7 +63,7 @@
             bindings = <&kp ESC>, <&kp TILDE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         mo_tog_layer: mo_tog_layer {
@@ -82,6 +82,20 @@
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(M))>;
         };
+
+        mo1_cv: mo1_cv {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MO1_CV";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&kp LC(C)>, <&kp LC(V)>;
+        };
+
+        win_ctrlz: win_ctrlz {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WIN_CTRLZ";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI>, <&kp LC(Z)>;
+        };
     };
 
     combos {
@@ -99,18 +113,6 @@
             bindings = <&kp RS(SQT)>;
         };
 
-        ctrlc_combo {
-            timeout-ms = <40>;
-            key-positions = <52 53>;
-            bindings = <&kp LC(C)>;
-        };
-
-        ctrlv_combo {
-            timeout-ms = <40>;
-            key-positions = <53 41>;
-            bindings = <&kp LC(V)>;
-        };
-
         alttab_combo {
             timeout-ms = <40>;
             key-positions = <41 40>;
@@ -123,14 +125,14 @@
 
         default_layer {
             bindings = <
-&none       &none   &none         &none   &none          &none                      &none          &none      &none       &none              &none     &none
-&esc_tilde  &kp N1  &kp N2        &kp N3  &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8      &kp N9             &kp N0    &kp MINUS
-&kp EQUAL   &kp Q   &kp W         &kp E   &kp R          &kp T                      &kp Y          &kp U      &kp I       &kp O              &kp P     &kp BSLH
-&kp TAB     &kp A   &kp S         &kp D   &kp F          &kp G                      &kp H          &kp J      &kp K       &kp L              &kp SEMI  &kp SQT
-&scrsaver   &kp Z   &kp X         &kp C   &kp V          &kp B                      &kp N          &kp M      &kp COMMA   &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                    &kp LEFT_GUI  &mo 1                                                                       &kp LBKT    &kp RIGHT_BRACKET
-                                          &shft_space    &ctrl_enter  &alt_ctrlz    &hanja_mouse   &mo 1      &kp LSHIFT
-                                          &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
+&none       &none   &none       &none    &none          &none                      &none          &none      &none            &none              &none     &none
+&esc_tilde  &kp N1  &kp N2      &kp N3   &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
+&kp EQUAL   &kp Q   &kp W       &kp E    &kp R          &kp T                      &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
+&kp TAB     &kp A   &kp S       &kp D    &kp F          &kp G                      &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
+&scrsaver   &kp Z   &kp X       &kp C    &kp V          &kp B                      &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                    &win_ctrlz  &mo1_cv                                                                      &kp LBKT         &kp RIGHT_BRACKET
+                                         &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &kp RIGHT_SHIFT
+                                         &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
