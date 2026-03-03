@@ -76,11 +76,11 @@
             quick-tap-ms = <200>;
         };
 
-        scrsaver: scrsaver {
+        scr_capture: scr_capture {
             compatible = "zmk,behavior-tap-dance";
-            label = "SCRSAVER";
+            label = "SCR_CAPTURE";
             #binding-cells = <0>;
-            bindings = <&none>, <&kp LA(LC(M))>;
+            bindings = <&none>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
         };
 
         mo1_ctrlc: mo1_ctrlc {
@@ -138,14 +138,14 @@
 
         default_layer {
             bindings = <
-&none       &none   &none       &none       &none          &none                      &none          &none      &none      &none              &none     &none
-&esc_tilde  &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL   &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB     &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&scrsaver   &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                    &win_ctrlz  &mo1_ctrlc                                                                      &kp LBKT   &kp RIGHT_BRACKET
-                                            &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &shft_f5
-                                            &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER  &kp SPACE
+&none         &none   &none       &none       &none          &none                      &none          &none      &none      &none              &none     &none
+&esc_tilde    &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL     &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB       &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&scr_capture  &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                      &win_ctrlz  &mo1_ctrlc                                                                      &kp LBKT   &kp RIGHT_BRACKET
+                                              &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &shft_f5
+                                              &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
