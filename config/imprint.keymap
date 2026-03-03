@@ -14,12 +14,12 @@
             bindings = <&kp LG(D)>, <&kp LC(LS(ESCAPE))>;
         };
 
-        ctrl_axcv: ctrl_axcv {
+        ctrl_axv: ctrl_axv {
             compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_AXCV";
+            label = "CTRL_AXV";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LC(X) LC(A)>, <&kp LC(C)>, <&kp LC(V)>;
+            bindings = <&mt LC(X) LC(A)>, <&kp LC(V)>;
         };
 
         alt_emoji: alt_emoji {
@@ -83,11 +83,11 @@
             bindings = <&none>, <&kp LA(LC(M))>;
         };
 
-        mo1_cv: mo1_cv {
+        mo1_ctrlc: mo1_ctrlc {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO1_CV";
+            label = "MO1_CTRLC";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&kp LC(C)>, <&kp LC(V)>;
+            bindings = <&mo 1>, <&kp LC(C)>;
         };
 
         win_ctrlz: win_ctrlz {
@@ -125,6 +125,11 @@
             key-positions = <41 40>;
             bindings = <&kp LA(TAB)>;
         };
+
+        ctrlv_combo {
+            bindings = <&kp LC(V)>;
+            key-positions = <52 53>;
+        };
     };
 
     keymap {
@@ -132,14 +137,14 @@
 
         default_layer {
             bindings = <
-&none       &none   &none       &none    &none          &none                      &none          &none      &none      &none              &none     &none
-&esc_tilde  &kp N1  &kp N2      &kp N3   &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL   &kp Q   &kp W       &kp E    &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB     &kp A   &kp S       &kp D    &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&scrsaver   &kp Z   &kp X       &kp C    &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                    &win_ctrlz  &mo1_cv                                                                      &kp LBKT   &kp RIGHT_BRACKET
-                                         &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &shft_f5
-                                         &kp BACKSPACE  &kp DELETE   &ctrl_axcv    &koreng_ctrls  &kp ENTER  &kp SPACE
+&none       &none   &none       &none       &none          &none                      &none          &none      &none      &none              &none     &none
+&esc_tilde  &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL   &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB     &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&scrsaver   &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                    &win_ctrlz  &mo1_ctrlc                                                                      &kp LBKT   &kp RIGHT_BRACKET
+                                            &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &shft_f5
+                                            &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
