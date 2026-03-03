@@ -120,15 +120,16 @@
             bindings = <&kp RS(SQT)>;
         };
 
-        alttab_combo {
-            timeout-ms = <40>;
-            key-positions = <41 40>;
-            bindings = <&kp LA(TAB)>;
-        };
-
         ctrlv_combo {
             bindings = <&kp LC(V)>;
             key-positions = <52 53>;
+            timeout-ms = <40>;
+        };
+
+        altesc_combo {
+            bindings = <&none>;
+            key-positions = <16 17>;
+            timeout-ms = <40>;
         };
     };
 
