@@ -6,7 +6,6 @@
 / {
     chosen {
         zmk,matrix-transform = &imprint_function_row;
-        zephyr,bt-c2h-uart = &uart0;
     };
 
     behaviors {
