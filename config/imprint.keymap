@@ -150,14 +150,14 @@
 
         Layer_1 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans              &trans                         &trans         &trans    &trans        &trans     &trans   &trans
-&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans    &trans        &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans              &trans                         &kp END        &trans    &trans        &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &trans    &trans        &trans     &trans   &kp C_MUTE
-&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT  &kp UP_ARROW  &kp RIGHT  &trans   &trans
-                       &kp LC(LS(T))  &trans                                                                                 &kp DOWN      &kp RIGHT
-                                                 &trans              &trans               &trans    &trans         &trans    &trans
-                                                 &trans              &trans               &trans    &trans         &trans    &trans
+&trans      &trans     &trans         &trans     &trans              &trans                         &trans         &trans              &trans              &trans               &trans   &trans
+&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                         &kp HOME       &trans              &trans              &trans               &kp F11  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans              &trans                         &kp END        &trans              &kp LG(UP_ARROW)    &trans               &trans   &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
+&trans      &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT            &kp UP_ARROW        &kp RIGHT            &trans   &trans
+                       &kp LC(LS(T))  &trans                                                                                           &kp DOWN            &kp RIGHT
+                                                 &trans              &trans               &trans    &trans         &trans              &trans
+                                                 &trans              &trans               &trans    &trans         &trans              &trans
             >;
         };
 
