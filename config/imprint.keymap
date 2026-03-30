@@ -4,9 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    chosen {
-        zmk,matrix-transform = &imprint_function_row;
-    };
+    chosen { zmk,matrix-transform = &imprint_function_row; };
 
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
@@ -131,6 +129,11 @@
             bindings = <&kp LA(ESC)>;
             key-positions = <16 17>;
             timeout-ms = <40>;
+        };
+
+        mouse_to_center {
+            bindings = <&kp LS(LA(LC(F12)))>;
+            key-positions = <18 19>;
         };
     };
 
