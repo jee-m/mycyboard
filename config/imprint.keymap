@@ -7,11 +7,15 @@
     chosen { zmk,matrix-transform = &imprint_function_row; };
 
     behaviors {
-        win_d_ctsf_esc: win_d_ctsf_esc {
+        win_d_ctsf_esc_bt: win_d_ctsf_esc_bt {
             compatible = "zmk,behavior-tap-dance";
-            label = "WIN_D_CTSF_ESC";
+            label = "WIN_D_CTSF_ESC_BT";
             #binding-cells = <0>;
-            bindings = <&kp LG(D)>, <&kp LC(LS(ESCAPE))>;
+            bindings =
+                <&kp LG(D)>,
+                <&kp LC(LS(ESCAPE))>,
+                <&none>,
+                <&bt BT_CLR_ALL>;
         };
 
         ctrl_axv: ctrl_axv {
@@ -21,11 +25,11 @@
             bindings = <&mt LC(X) LC(A)>, <&kp LC(V)>;
         };
 
-        alt_emoji: alt_emoji {
+        alt_ctrlf: alt_ctrlf {
             compatible = "zmk,behavior-tap-dance";
-            label = "ALT_EMOJI";
+            label = "ALT_CTRLF";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&kp LG(PERIOD)>;
+            bindings = <&kp LEFT_ALT>, <&kp LC(F)>;
         };
 
         ctrl_enter: ctrl_enter {
@@ -42,11 +46,11 @@
             bindings = <&kp LSHIFT>, <&kp SPACE>;
         };
 
-        hanja_mouse: hanja_mouse {
+        hanja_emoji: hanja_emoji {
             compatible = "zmk,behavior-tap-dance";
-            label = "HANJA_MOUSE";
+            label = "HANJA_EMOJI";
             #binding-cells = <0>;
-            bindings = <&kp LANG_HANJA>, <&tog 2>;
+            bindings = <&kp LANG_HANJA>, <&kp LG(PERIOD)>;
         };
 
         koreng_ctrls: koreng_ctrls {
@@ -75,11 +79,15 @@
             quick-tap-ms = <200>;
         };
 
-        scr_capture: scr_capture {
+        lay1_scr_capture_bt: lay1_scr_capture_bt {
             compatible = "zmk,behavior-tap-dance";
-            label = "SCR_CAPTURE";
+            label = "LAY1_SCR_CAPTURE_BT";
             #binding-cells = <0>;
-            bindings = <&none>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
+            bindings =
+                <&mo 1>,
+                <&kp LA(LC(M))>,
+                <&kp LG(PRINTSCREEN)>,
+                <&bt BT_CLR_ALL>;
         };
 
         mo1_ctrlc: mo1_ctrlc {
@@ -135,6 +143,16 @@
             bindings = <&kp LS(LA(LC(F12)))>;
             key-positions = <18 19>;
         };
+
+        mouse_layer {
+            bindings = <&tog 2>;
+            key-positions = <54 55>;
+        };
+
+        refresh {
+            bindings = <&kp F5>;
+            key-positions = <29 17>;
+        };
     };
 
     keymap {
@@ -142,14 +160,14 @@
 
         default_layer {
             bindings = <
-&none         &none   &none       &none       &none          &none                      &none          &none      &none      &none              &none     &none
-&esc_tilde    &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL     &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB       &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&scr_capture  &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                      &win_ctrlz  &mo1_ctrlc                                                                      &kp LBKT   &kp RIGHT_BRACKET
-                                              &shft_space    &ctrl_enter  &alt_emoji    &hanja_mouse   &mo 1      &shft_f5
-                                              &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER  &kp SPACE
+&none                 &none   &none       &none       &none          &none                      &none          &none      &none      &none              &none     &none
+&esc_tilde            &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL             &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB               &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&lay1_scr_capture_bt  &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc_bt
+                              &win_ctrlz  &mo1_ctrlc                                                                      &kp LBKT   &kp RIGHT_BRACKET
+                                                      &shft_space    &ctrl_enter  &alt_ctrlf    &hanja_emoji   &mo 1      &shft_f5
+                                                      &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
