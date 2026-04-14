@@ -153,6 +153,16 @@
             bindings = <&kp F5>;
             key-positions = <29 17>;
         };
+
+        ctrl_tab {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <28 27>;
+        };
+
+        ctrl_sft_tab {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <27 26>;
+        };
     };
 
     keymap {
