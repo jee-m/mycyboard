@@ -75,11 +75,11 @@
             quick-tap-ms = <200>;
         };
 
-        lay1_scr_capture: lay1_scr_capture {
+        scrsav_capture: scrsav_capture {
             compatible = "zmk,behavior-tap-dance";
-            label = "LAY1_SCR_CAPTURE";
+            label = "SCRSAV_CAPTURE";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
+            bindings = <&trans>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
         };
 
         mo1_ctrlc: mo1_ctrlc {
@@ -157,6 +157,12 @@
             bindings = <&kp LC(LS(TAB))>;
             key-positions = <27 26>;
         };
+
+        ctrlc_combo {
+            bindings = <&kp LC(C)>;
+            key-positions = <61 52>;
+            timeout-ms = <50>;
+        };
     };
 
     keymap {
@@ -164,14 +170,14 @@
 
         default_layer {
             bindings = <
-&none              &none   &none       &none       &none          &none                      &none          &none        &none      &none              &none     &none
-&esc_tilde         &kp N1  &kp N2      &kp N3      &kp N4         &kp N5                     &kp N6         &kp N7       &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL          &kp Q   &kp W       &kp E       &kp R          &kp T                      &kp Y          &kp U        &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB            &kp A   &kp S       &kp D       &kp F          &kp G                      &kp H          &kp J        &kp K      &kp L              &kp SEMI  &kp SQT
-&lay1_scr_capture  &kp Z   &kp X       &kp C       &kp V          &kp B                      &kp N          &kp M        &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                           &win_ctrlz  &mo1_ctrlc                                                                        &kp LBKT   &kp RIGHT_BRACKET
-                                                   &shft_space    &ctrl_enter  &alt_ctrlf    &hanja_emoji   &lay1_mouse  &shft_f5
-                                                   &kp BACKSPACE  &kp DELETE   &ctrl_axv     &koreng_ctrls  &kp ENTER    &kp SPACE
+&none            &none   &none       &none   &none             &none                               &none          &none      &none      &none              &none     &none
+&esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6         &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y          &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H          &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N          &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                         &win_ctrlz  &mo 1                                                                                   &kp LBKT   &kp RIGHT_BRACKET
+                                             &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_ctrlf         &hanja_emoji   &mo 1      &shft_f5
+                                             &kp BACKSPACE     &kp DELETE       &mt LC(X) LC(A)    &koreng_ctrls  &kp ENTER  &kp SPACE
             >;
         };
 
@@ -183,7 +189,7 @@
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                    &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
 &sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)            &kp PAGE_DOWN  &kp LEFT            &kp UP_ARROW        &kp RIGHT            &trans   &sys_reset
                        &kp LC(LS(T))  &trans                                                                                           &kp DOWN            &kp RIGHT
-                                                 &bt BT_CLR          &trans               &trans    &trans         &trans              &trans
+                                                 &bt BT_CLR          &trans               &trans    &trans         &trans              &tog 2
                                                  &bt BT_SEL 0        &bt BT_SEL 1         &trans    &trans         &trans              &trans
             >;
         };
