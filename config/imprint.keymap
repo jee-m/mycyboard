@@ -14,32 +14,11 @@
             bindings = <&kp LG(D)>, <&kp LC(LS(ESCAPE))>;
         };
 
-        ctrl_axv: ctrl_axv {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_AXV";
-            #binding-cells = <0>;
-            bindings = <&mt LC(X) LC(A)>, <&kp LC(V)>;
-        };
-
         alt_ctrlf: alt_ctrlf {
             compatible = "zmk,behavior-tap-dance";
             label = "ALT_CTRLF";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&kp LC(F)>;
-        };
-
-        ctrl_enter: ctrl_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_ENTER";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp ENTER>;
-        };
-
-        shft_space: shft_space {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHFT_SPACE";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&kp SPACE>;
         };
 
         hanja_emoji: hanja_emoji {
@@ -82,13 +61,6 @@
             bindings = <&trans>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
         };
 
-        mo1_ctrlc: mo1_ctrlc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MO1_CTRLC";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&kp LC(C)>;
-        };
-
         win_ctrlz: win_ctrlz {
             compatible = "zmk,behavior-tap-dance";
             label = "WIN_CTRLZ";
@@ -101,13 +73,6 @@
             label = "SHFT_F5";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_SHIFT>, <&kp F5>;
-        };
-
-        lay1_mouse: lay1_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAY1_MOUSE";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&none>, <&tog 2>;
         };
     };
 
