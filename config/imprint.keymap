@@ -145,7 +145,7 @@
 
         apple_layer {
             bindings = <&tog 3>;
-            key-positions = <5 6>;
+            key-positions = <17 18>;
         };
     };
 
