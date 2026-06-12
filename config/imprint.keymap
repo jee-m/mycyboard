@@ -88,8 +88,8 @@
         quick_switch: quick_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <60>;
+            tap-ms = <60>;
             bindings =
                 <&macro_press>,
                 <&kp LGUI>,
