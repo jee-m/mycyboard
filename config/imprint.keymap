@@ -85,7 +85,7 @@
     };
 
     macros {
-        app_switch_left: app_switch_left {
+        quick_switch: quick_switch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
@@ -170,6 +170,11 @@
         apple_layer {
             bindings = <&tog 3>;
             key-positions = <17 18>;
+        };
+
+        quick_switch {
+            bindings = <&quick_switch>;
+            key-positions = <16 17>;
         };
     };
 
