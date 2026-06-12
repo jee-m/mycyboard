@@ -84,6 +84,20 @@
         };
     };
 
+    macros {
+        app_switch_left: app_switch_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp CAPS>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp CAPS>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
