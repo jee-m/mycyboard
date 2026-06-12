@@ -84,6 +84,20 @@
         };
     };
 
+    macros {
+        globe_left: globe_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <200>;
+            tap-ms = <50>;
+            bindings
+                = <&macro_press &kp CAPS>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp CAPS>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
