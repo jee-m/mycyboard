@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SWITCH_EMOJI_MAC";
             #binding-cells = <0>;
-            bindings = <&kp RS(RG(TAB))>, <&kp RC(RG(SPACE))>;
+            bindings = <&globe_left>, <&kp RC(RG(SPACE))>;
         };
     };
 
@@ -90,11 +90,13 @@
             #binding-cells = <0>;
             wait-ms = <200>;
             tap-ms = <50>;
-            bindings
-                = <&macro_press &kp CAPS>
-                , <&macro_tap &kp LEFT>
-                , <&macro_release &kp CAPS>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp CAPS>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp CAPS>;
         };
     };
 
@@ -169,11 +171,6 @@
             bindings = <&tog 3>;
             key-positions = <17 18>;
         };
-
-        quick_switch {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <16 17>;
-        };
     };
 
     keymap {
@@ -235,7 +232,7 @@
             bindings = <
 &trans      &trans     &trans         &trans     &trans              &trans                             &trans               &trans         &trans              &trans     &trans   &trans
 &kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                             &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans              &trans                             &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &trans     &trans              &kp CAPS                           &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                        &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
 &sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
                        &kp LC(LS(T))  &trans                                                                                                &kp DOWN            &kp RIGHT
