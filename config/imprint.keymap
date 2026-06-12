@@ -76,11 +76,11 @@
             bindings = <&kp RIGHT_SHIFT>, <&kp F5>;
         };
 
-        hanja_emoji_mac: hanja_emoji_mac {
+        switch_emoji_mac: switch_emoji_mac {
             compatible = "zmk,behavior-tap-dance";
-            label = "HANJA_EMOJI_MAC";
+            label = "SWITCH_EMOJI_MAC";
             #binding-cells = <0>;
-            bindings = <&kp RA(ENTER)>, <&kp RC(RG(SPACE))>;
+            bindings = <&kp RS(RG(TAB))>, <&kp RC(RG(SPACE))>;
         };
     };
 
@@ -157,7 +157,7 @@
         };
 
         quick_switch {
-            bindings = <&kp LS(LG(TAB))>;
+            bindings = <&kp LG(SPACE)>;
             key-positions = <16 17>;
         };
     };
@@ -206,14 +206,14 @@
 
         layer_3 {
             bindings = <
-&none            &none   &none       &none   &none             &none                               &none             &none      &none      &none              &none     &none
-&esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6            &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y             &kp U      &kp I      &kp O              &kp P     &kp BSLH
-&kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H             &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
-&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N             &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                         &win_ctrlz  &mo 4                                                                                      &kp LBKT   &kp RIGHT_BRACKET
-                                             &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_ctrlf         &hanja_emoji_mac  &mo 4      &shft_f5
-                                             &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)     &kp ENTER  &kp SPACE
+&none            &none   &none       &none   &none             &none                               &none              &none      &none      &none              &none     &none
+&esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6             &kp N7     &kp N8     &kp N9             &kp N0    &kp MINUS
+&kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y              &kp U      &kp I      &kp O              &kp P     &kp BSLH
+&kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H              &kp J      &kp K      &kp L              &kp SEMI  &kp SQT
+&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N              &kp M      &kp COMMA  &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                         &win_ctrlz  &mo 4                                                                                       &kp LBKT   &kp RIGHT_BRACKET
+                                             &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_ctrlf         &switch_emoji_mac  &mo 4      &shft_f5
+                                             &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)      &kp ENTER  &kp SPACE
             >;
         };
 
