@@ -254,8 +254,8 @@
 &trans      &trans     &trans         &trans     &trans                &trans                               &trans               &trans         &trans              &trans     &trans   &trans
 &kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                            &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
 &trans      &trans     &trans         &trans     &trans                &trans                               &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                          &kp RA(PAGE_UP)      &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
-&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                &kp RA(PAGE_DOWN)    &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                          &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
                        &kp LS(LG(T))  &trans                                                                                                    &kp DOWN            &kp RIGHT
                                                  &trans                &trans                 &trans        &trans               &trans         &trans
                                                  &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_CLR    &trans               &trans         &trans
