@@ -82,6 +82,13 @@
             #binding-cells = <0>;
             bindings = <&globe_left>, <&globe_right>;
         };
+
+        gui_z_mac: gui_z_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "GUI_Z_MAC";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI>, <&kp LG(Z)>;
+        };
     };
 
     macros {
@@ -183,7 +190,7 @@
 
         apple_layer {
             bindings = <&tog 3>;
-            key-positions = <17 18>;
+            key-positions = <48 59>;
         };
     };
 
@@ -236,7 +243,7 @@
 &kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y           &kp U      &kp I            &kp O              &kp P     &kp BSLH
 &kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H           &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
 &scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N           &kp M      &kp COMMA        &kp DOT            &kp FSLH  &win_d_ctsf_esc
-                         &win_ctrlz  &mo 4                                                                                    &kp LBKT         &kp RIGHT_BRACKET
+                         &gui_z_mac  &mo 4                                                                                    &kp LBKT         &kp RIGHT_BRACKET
                                              &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &switchapp_mac  &mo 4      &kp RIGHT_SHIFT
                                              &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)   &kp ENTER  &kp SPACE
             >;
@@ -244,14 +251,14 @@
 
         layer_4 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans              &trans                             &trans               &trans         &trans              &trans     &trans   &trans
-&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                             &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans              &trans                             &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                        &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
-&sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
-                       &kp LC(LS(T))  &trans                                                                                                &kp DOWN            &kp RIGHT
-                                                 &trans              &trans               &trans        &trans               &trans         &trans
-                                                 &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_CLR    &trans               &trans         &trans
+&trans      &trans     &trans         &trans     &trans                &trans                               &trans               &trans         &trans              &trans     &trans   &trans
+&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                            &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans                &trans                               &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                          &kp RA(PAGE_UP)      &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                &kp RA(PAGE_DOWN)    &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
+                       &kp LS(LG(T))  &trans                                                                                                    &kp DOWN            &kp RIGHT
+                                                 &trans                &trans                 &trans        &trans               &trans         &trans
+                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_CLR    &trans               &trans         &trans
             >;
         };
     };
