@@ -214,7 +214,7 @@
 
         Layer_1 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans              &trans                             &kp trans      &trans              &trans              &trans               &trans   &trans
+&trans      &trans     &trans         &trans     &trans              &trans                             &trans         &trans              &trans              &trans               &trans   &trans
 &kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                             &kp HOME       &trans              &trans              &trans               &kp F11  &kp C_VOLUME_UP
 &trans      &trans     &trans         &trans     &trans              &trans                             &kp END        &trans              &kp LG(UP_ARROW)    &trans               &trans   &kp C_VOLUME_DOWN
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                        &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
@@ -227,7 +227,7 @@
 
         Auto_Mouse_Layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &kp trans       &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &kp HOME        &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &kp END         &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &msc SCRL_UP    &mkp LCLK       &mkp MCLK       &mkp MB2         &trans  &trans
@@ -253,7 +253,7 @@
 
         layer_4 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans                &trans                               &kp trans            &trans         &trans              &trans     &trans   &trans
+&trans      &trans     &trans         &trans     &trans                &trans                               &trans               &trans         &trans              &trans     &trans   &trans
 &kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                            &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
 &trans      &trans     &trans         &trans     &trans                &trans                               &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                          &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
