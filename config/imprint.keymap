@@ -5,7 +5,7 @@
 
 / {
     chosen {
-        zmk,matrix-transform = &imprint_number_row;
+        zmk,matrix-transform = &imprint_function_row;
      };
 
     behaviors {
