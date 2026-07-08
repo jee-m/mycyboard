@@ -4,7 +4,11 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    chosen { zmk,physical-layout = &physical_layout_imprint_number_row; };
+    chosen {
+        zmk,physical-layout = &physical_layout_imprint_number_row;
+        zmk,matrix-transform = &imprint_number_row;
+    };
+};
 
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
