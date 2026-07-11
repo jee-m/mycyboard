@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: imprint_dongle
   - board: assimilator-bt
     shield: imprint_left
