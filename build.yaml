@@ -20,9 +20,11 @@
 include:
   - board: xiao_ble//zmk
     shield: imprint_dongle
-  - board: assimilator-bt
+
+  - board: assimilator-bt//zmk
     shield: imprint_left
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_STUDIO=n
-  - board: assimilator-bt
+
+  - board: assimilator-bt//zmk
     shield: imprint_right
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_STUDIO=n
