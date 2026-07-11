@@ -37,25 +37,28 @@
         >;
     };
 
-    physical_layout_imprint_number_row: dummy_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "Imprint Dongle Layout";
-        kscan = <&mock_kscan>;
-        transform = <&imprint_number_row>;
-
-        /* * 💡 [20년 차 엔지니어의 핵심 수정 포인트]
-         * 'keys' 속성 참조 대신, 물리 키 노드를 자식 노드 형태로 선언합니다.
-         * 이로써 DT 컴파일러의 'lacks binding' 오류를 피하고 ZMK Studio의 정적 검증을 우아하게 통과합니다.
-         */
-        dummy_key {
-            compatible = "zmk,physical-layout-key";
-            x = <0>;
-            y = <0>;
-            width = <100>;
-            height = <100>;
-        };
-    };
-
     /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
     trackball_peripheral_split: dummy_trackball_node {};
+
+    /* * ZMK 0.3.0 / Zephyr OS의 물리 레이아웃 부모 규격을 일치시키기 위해
+     * 'zmk,physical-layouts' 복수형 속성을 가진 컨테이너 노드로 레이아웃을 감싸줍니다.
+     */
+    layouts {
+        compatible = "zmk,physical-layouts";
+
+        physical_layout_imprint_number_row: dummy_layout {
+            compatible = "zmk,physical-layout";
+            display-name = "Imprint Dongle Layout";
+            kscan = <&mock_kscan>;
+            transform = <&imprint_number_row>;
+
+            dummy_key {
+                compatible = "zmk,physical-layout-key";
+                x = <0>;
+                y = <0>;
+                width = <100>;
+                height = <100>;
+            };
+        };
+    };
 };
