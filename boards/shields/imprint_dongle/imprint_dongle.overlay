@@ -3,7 +3,6 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &physical_layout_imprint_number_row;
         zmk,matrix-transform = &imprint_number_row;
     };
 
@@ -35,18 +34,6 @@
             0x205 0x204 0x203 0x202 0x201 0x200 0x900 0x901 0x902 0x903 0x904 0x905
             0x103 0x102 0x802 0x803 0x3 0x2 0x1 0x701 0x702 0x703 0x7 0x6 0x5 0x705 0x706 0x707
         >;
-    };
-
-    physical_layout_imprint_number_row: dummy_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "Imprint Dongle Layout";
-        kscan = <&mock_kscan>;
-        transform = <&imprint_number_row>;
-
-        /* 🔥 [최종 정해] ZMK 내장 공식 물리 키 템플릿(&key_physical)과
-         * 필수 메트릭 인자 4개(x y width height)를 주입하여 ZMK Studio 분석기를 완벽하게 통과시킵니다.
-         */
-        keys = <&key_physical 0 0 100 100>;
     };
 
     /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
