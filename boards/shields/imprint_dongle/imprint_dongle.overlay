@@ -4,7 +4,6 @@
 	chosen {
 		zmk,kscan = &mock_kscan;
 		zmk,matrix-transform = &imprint_function_row;
-		/* 🔥 ZMK main 브랜치에서 화면을 구동하기 위한 필수 지정 */
 		zephyr,display = &oled;
 	};
 
@@ -15,7 +14,6 @@
 		events = <0>;
 	};
 
-	/* 76키 크기와 100% 일치하는 정식 매트릭스 변환 노드 */
 	imprint_function_row: mock_transform {
 		compatible = "zmk,matrix-transform";
 		columns = <8>;
@@ -30,13 +28,11 @@
 		>;
 	};
 
-	/* 공통 키맵의 트랙볼 제어 코드가 동글 빌드 시 튕기지 않도록 잡아주는 방어 노드 */
 	trackball_peripheral_split: dummy_trackball_node {
 		status = "disabled";
 	};
 };
 
-/* 동글의 디스플레이(OLED) 장치를 정상 가동시키는 하드웨어 선언 */
 &xiao_i2c {
 	status = "okay";
 
@@ -49,8 +45,6 @@
 		page-offset = <0>;
 		display-offset = <0>;
 		multiplex-ratio = <63>;
-		segment-remap;
-		page-remap;
 		inversion-on;
 		prechargep = <0x22>;
 	};
