@@ -33,8 +33,13 @@
         display-name = "Dongle Layout";
         transform = <&imprint_function_row>;
         kscan = <&mock_kscan>;
-        /* 🔥 zmk,kscan-mock 자체 바인딩 규격에 완벽히 부합하도록 뒤쪽 4셀 인자를 제거한 최종 정해 */
-        keys = <&mock_kscan>;
+        /* 4개의 셀 인자를 가지는 정식 규격으로 단일 더미 키 매핑 */
+        keys = <&dongle_key 0 0 100 100>;
+    };
+
+    /* compatible 없이 #key-cells만 선언하여 binding 검증 오류를 원천 차단하는 독립 노드 */
+    dongle_key: dongle_key {
+        #key-cells = <4>;
     };
 
     trackball_peripheral_split: dummy_trackball_node {
