@@ -265,3 +265,7 @@
         };
     };
 };
+
+&trackball_peripheral_split {
+    device = <&trackball_central>;
+};
