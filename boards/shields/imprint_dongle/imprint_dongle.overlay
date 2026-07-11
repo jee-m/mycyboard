@@ -12,6 +12,8 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
+        /* 정식 바인딩이 존재하는 mock_kscan에 4개의 레이아웃 셀(x, y, width, height) 플래그를 주입 */
+        #key-cells = <4>;
     };
 
     imprint_function_row: mock_transform {
@@ -33,13 +35,8 @@
         display-name = "Dongle Layout";
         transform = <&imprint_function_row>;
         kscan = <&mock_kscan>;
-        /* 정적 규격에 부합하는 4셀(x y width height) 더미 키 주입 */
-        keys = <&dongle_key 0 0 100 100>;
-    };
-
-    dongle_key: dongle_key {
-        compatible = "zmk,physical-layout-key";
-        #key-cells = <4>;
+        /* 바인딩 검증을 통과한 mock_kscan 노드를 좌표 인자와 함께 직접 매핑 */
+        keys = <&mock_kscan 0 0 100 100>;
     };
 
     trackball_peripheral_split: dummy_trackball_node {
