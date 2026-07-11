@@ -2,7 +2,17 @@
 
 / {
     chosen {
+        /* ZMK 시스템 부팅을 위해 필수적인 가상 스캐너 지정 */
+        zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &imprint_function_row;
+    };
+
+    /* 컴파일러를 자극하지 않는 순수 가상 스캔 노드 복구 */
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 
     imprint_function_row: mock_transform {
