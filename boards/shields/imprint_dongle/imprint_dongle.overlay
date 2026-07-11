@@ -42,16 +42,6 @@
         display-name = "Imprint Dongle Layout";
         kscan = <&mock_kscan>;
         transform = <&imprint_number_row>;
-        keys = <&dummy_key>;
-    };
-
-    dummy_key: dummy_key {
-        compatible = "zmk,physical-layout-key";
-        x = <0>;
-        y = <0>;
-        width = <100>;
-        height = <100>;
-        #key-cells = <0>;
     };
 
     /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
