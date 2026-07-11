@@ -37,28 +37,25 @@
         >;
     };
 
-    /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
-    trackball_peripheral_split: dummy_trackball_node {};
+    /* 💡 루트 직속으로 안전하게 배치된 물리 레이아웃 노드 */
+    physical_layout_imprint_number_row: dummy_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Imprint Dongle Layout";
+        kscan = <&mock_kscan>;
+        transform = <&imprint_number_row>;
 
-    /* * ZMK 0.3.0 / Zephyr OS의 물리 레이아웃 부모 규격을 일치시키기 위해
-     * 'zmk,physical-layouts' 복수형 속성을 가진 컨테이너 노드로 레이아웃을 감싸줍니다.
-     */
-    layouts {
-        compatible = "zmk,physical-layouts";
-
-        physical_layout_imprint_number_row: dummy_layout {
-            compatible = "zmk,physical-layout";
-            display-name = "Imprint Dongle Layout";
-            kscan = <&mock_kscan>;
-            transform = <&imprint_number_row>;
-
-            dummy_key {
-                compatible = "zmk,physical-layout-key";
-                x = <0>;
-                y = <0>;
-                width = <100>;
-                height = <100>;
-            };
+        /* 💡 컴파일러 에러를 유도하던 'keys = <...>' 라인을 완벽히 도려내고,
+         * ZMK Studio의 정적 어설션만 우회하도록 자식 노드 형태로만 빌드 플래그를 충족합니다.
+         */
+        dummy_key {
+            compatible = "zmk,physical-layout-key";
+            x = <0>;
+            y = <0>;
+            width = <100>;
+            height = <100>;
         };
     };
+
+    /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
+    trackball_peripheral_split: dummy_trackball_node {};
 };
