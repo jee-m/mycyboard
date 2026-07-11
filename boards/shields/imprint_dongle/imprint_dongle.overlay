@@ -14,7 +14,7 @@
         events = <0>;
     };
 
-    /* 키맵의 라벨과 일치하도록 function_row로 정의 */
+    /* 키맵과 오프셋을 100% 일치시킨 가상 매트릭스 변환 노드 */
     imprint_function_row: mock_transform {
         compatible = "zmk,matrix-transform";
         columns = <8>;
@@ -29,7 +29,7 @@
         >;
     };
 
-    /* ZMK Studio를 위한 물리 레이아웃 정의 */
+    /* ZMK Studio 정적 검증(BUILD_ASSERT)을 에러 없이 우아하게 통과시키는 표준 레이아웃 구조 */
     physical_layout_dongle: physical_layout_dongle {
         compatible = "zmk,physical-layout";
         display-name = "Dongle Layout";
@@ -38,13 +38,16 @@
         
         dummy_key {
             compatible = "zmk,physical-layout-key";
-            x = <0>; y = <0>; width = <100>; height = <100>;
+            x = <0>;
+            y = <0>;
+            width = <100>;
+            height = <100>;
         };
     };
 
-    /* [해결의 핵심] 키맵 파일이 참조하는 라벨을 여기서 더미로 정의 */
-    trackball_peripheral_split: trackball_peripheral_split {
-        compatible = "zmk,behavior-none";
+    /* 🔥 [최종 정해] 공통 키맵의 트랙볼 제어 코드가 동글 빌드 시에도 
+     * 라벨 미정의(undefined) 에러를 내지 않도록 루트 블록 내부에 선언하는 가상 더미 노드 */
+    trackball_peripheral_split: dummy_trackball_node {
         status = "disabled";
     };
 };
