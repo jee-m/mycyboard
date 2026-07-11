@@ -33,13 +33,16 @@
         display-name = "Dongle Layout";
         transform = <&imprint_function_row>;
         kscan = <&mock_kscan>;
-        /* 4개의 셀 인자를 가지는 정식 규격으로 단일 더미 키 매핑 */
-        keys = <&dongle_key 0 0 100 100>;
-    };
+        /* 인자(cell) 없이 하단의 자식 노드 라벨을 순수 단선 참조 */
+        keys = <&dongle_key>;
 
-    /* compatible 없이 #key-cells만 선언하여 binding 검증 오류를 원천 차단하는 독립 노드 */
-    dongle_key: dongle_key {
-        #key-cells = <4>;
+        /* 내부 자식 노드로 배치하여 바인딩(lacks binding) 및 cell 개수 불일치를 원천 차단 */
+        dongle_key: dongle_key {
+            x = <0>;
+            y = <0>;
+            width = <100>;
+            height = <100>;
+        };
     };
 
     trackball_peripheral_split: dummy_trackball_node {
