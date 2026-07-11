@@ -1,50 +1,15 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &imprint_function_row;
-        zmk,physical-layout = &physical_layout_dongle;
-    };
-
-    mock_kscan: mock_kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-
+    /* Satisfies the matrix-transform assignment in the shared keymap */
     imprint_function_row: mock_transform {
         compatible = "zmk,matrix-transform";
-        columns = <8>;
-        rows = <14>;
-        map = <
-            0x605 0x604 0x603 0x602 0x601 0x600 0xd00 0xd01 0xd02 0xd03 0xd04 0xd05
-            0x505 0x504 0x503 0x502 0x501 0x500 0xc00 0xc01 0xc02 0xc03 0xc04 0xc05
-            0x405 0x404 0x403 0x402 0x401 0x400 0xb00 0xb01 0xb02 0xb03 0xb04 0xb05
-            0x305 0x304 0x303 0x302 0x301 0x300 0xa00 0xa01 0xa02 0xa03 0xa04 0xa05
-            0x205 0x204 0x203 0x202 0x201 0x200 0x900 0x901 0x902 0x903 0x904 0x905
-            0x103 0x102 0x802 0x803 0x3 0x2 0x1 0x701 0x702 0x703 0x7 0x6 0x5 0x705 0x706 0x707
-        >;
+        columns = <0>;
+        rows = <0>;
+        map = <>;
     };
 
-    physical_layout_dongle: physical_layout_dongle {
-        compatible = "zmk,physical-layout";
-        display-name = "Dongle Layout";
-        transform = <&imprint_function_row>;
-        kscan = <&mock_kscan>;
-        /* 인자(cell) 없이 하단의 자식 노드 라벨을 순수 단선 참조 */
-        keys = <&dongle_key>;
-
-        /* 내부 자식 노드로 배치하여 바인딩(lacks binding) 및 cell 개수 불일치를 원천 차단 */
-        dongle_key: dongle_key {
-            x = <0>;
-            y = <0>;
-            width = <100>;
-            height = <100>;
-        };
-    };
-
+    /* Satisfies the trackball hardware control block at the end of the keymap */
     trackball_peripheral_split: dummy_trackball_node {
         status = "disabled";
     };
