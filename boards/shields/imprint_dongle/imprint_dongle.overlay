@@ -4,7 +4,6 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &imprint_function_row;
-        /* 👍 Zephyr 엔진이 정상 인식할 수 있도록 루트 직속 레이아웃을 바인딩합니다. */
         zmk,physical-layout = &physical_layout_dongle;
     };
 
@@ -15,7 +14,6 @@
         events = <0>;
     };
 
-    /* 공통 키맵(imprint.keymap)의 chosen 규격과 100% 일치시킨 매트릭스 변환 노드 */
     imprint_function_row: mock_transform {
         compatible = "zmk,matrix-transform";
         columns = <8>;
@@ -30,19 +28,20 @@
         >;
     };
 
-    /* 👍 [ZMK v0.3.0 공식 표준 구조]
-     * 임의의 가상 컨테이너나 불필요한 자식 key 노드를 모두 제거하고, 
-     * 루트 직속으로 레이아웃을 선언하여 ZMK Studio 빌드 어설션을 무조건 통과시킵니다.
-     */
     physical_layout_dongle: physical_layout_dongle {
         compatible = "zmk,physical-layout";
         display-name = "Dongle Layout";
         transform = <&imprint_function_row>;
         kscan = <&mock_kscan>;
+        /* 정적 규격에 부합하는 4셀(x y width height) 더미 키 주입 */
+        keys = <&dongle_key 0 0 100 100>;
     };
 
-    /* 공통 키맵 파일(imprint.keymap)의 트랙볼 제어 코드가 동글 빌드 시에도 
-     * 라벨 미정의(undefined) 에러를 내지 않도록 방어해 주는 하드웨어 우회용 더미 노드 */
+    dongle_key: dongle_key {
+        compatible = "zmk,physical-layout-key";
+        #key-cells = <4>;
+    };
+
     trackball_peripheral_split: dummy_trackball_node {
         status = "disabled";
     };
