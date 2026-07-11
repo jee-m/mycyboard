@@ -4,7 +4,6 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &imprint_function_row;
-        /* ZMK Studio를 위한 표준 레이아웃 포인터 */
         zmk,physical-layout = &physical_layout_dongle;
     };
 
@@ -15,13 +14,12 @@
         events = <0>;
     };
 
-    /* 실제 키맵의 transform 라벨과 일치 */
+    /* 키맵의 라벨과 일치하도록 function_row로 정의 */
     imprint_function_row: mock_transform {
         compatible = "zmk,matrix-transform";
         columns = <8>;
         rows = <14>;
         map = <
-            /* (기존 맵 유지) */
             0x605 0x604 0x603 0x602 0x601 0x600 0xd00 0xd01 0xd02 0xd03 0xd04 0xd05
             0x505 0x504 0x503 0x502 0x501 0x500 0xc00 0xc01 0xc02 0xc03 0xc04 0xc05
             0x405 0x404 0x403 0x402 0x401 0x400 0xb00 0xb01 0xb02 0xb03 0xb04 0xb05
@@ -31,11 +29,22 @@
         >;
     };
 
-    /* 물리 키가 없으므로 studio 검증만 통과하도록 빈 레이아웃 노드 정의 */
+    /* ZMK Studio를 위한 물리 레이아웃 정의 */
     physical_layout_dongle: physical_layout_dongle {
         compatible = "zmk,physical-layout";
-        display-name = "Dongle";
+        display-name = "Dongle Layout";
         transform = <&imprint_function_row>;
         kscan = <&mock_kscan>;
+        
+        dummy_key {
+            compatible = "zmk,physical-layout-key";
+            x = <0>; y = <0>; width = <100>; height = <100>;
+        };
+    };
+
+    /* [해결의 핵심] 키맵 파일이 참조하는 라벨을 여기서 더미로 정의 */
+    trackball_peripheral_split: trackball_peripheral_split {
+        compatible = "zmk,behavior-none";
+        status = "disabled";
     };
 };
