@@ -25,10 +25,10 @@
         columns = <8>;
         rows = <14>;
         map = <
-            /* 1. 키맵 맨 윗줄의 &none (12개) 오프셋과 매칭되는 더미 가상 매트릭스 행 추가 */
+            /* 키맵 맨 윗줄의 &none (12개) 오프셋 매칭용 가상 매트릭스 행 */
             0x605 0x604 0x603 0x602 0x601 0x600 0xd00 0xd01 0xd02 0xd03 0xd04 0xd05
 
-            /* 2. 기존 5행 구조 (64개) -> 총 76개로 키맵 바인딩 개수와 완벽 일치 완료 */
+            /* 기존 5행 구조 (64개) -> 총 76개 매핑 완벽 동기화 완료 */
             0x505 0x504 0x503 0x502 0x501 0x500 0xc00 0xc01 0xc02 0xc03 0xc04 0xc05
             0x405 0x404 0x403 0x402 0x401 0x400 0xb00 0xb01 0xb02 0xb03 0xb04 0xb05
             0x305 0x304 0x303 0x302 0x301 0x300 0xa00 0xa01 0xa02 0xa03 0xa04 0xa05
@@ -42,12 +42,9 @@
         display-name = "Imprint Dongle Layout";
         kscan = <&mock_kscan>;
         transform = <&imprint_number_row>;
-        
-        /* ZMK Studio 컴파일러 통과용 가상 키 노드 참조 */
         keys = <&dummy_key>;
     };
 
-    /* 컴파일 오류를 원천 차단하기 위한 규격 일치용 가상 키 정의 */
     dummy_key: dummy_key {
         compatible = "zmk,physical-layout-key";
         x = <0>;
@@ -55,4 +52,7 @@
         width = <100>;
         height = <100>;
     };
+
+    /* 공유 키맵 파일의 라벨 미정의 에러(undefined node label) 우회용 가상 스텁 */
+    trackball_peripheral_split: dummy_trackball_node {};
 };
