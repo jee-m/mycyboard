@@ -266,6 +266,6 @@
     };
 };
 
-&trackball_peripheral_split {
+/omit-if-no-ref/ &trackball_peripheral_split {
     status = "disabled";
 };
