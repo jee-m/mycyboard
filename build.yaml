@@ -21,6 +21,8 @@ include:
   - board: seeeduino_xiao_ble
     shield: imprint_dongle
   - board: assimilator-bt
-    shield: imprint_left_peripheral
+    shield: imprint_left
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: assimilator-bt
-    shield: imprint_right_peripheral
+    shield: imprint_right
+    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
