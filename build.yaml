@@ -28,3 +28,7 @@ include:
   - board: assimilator-bt
     shield: imprint_right
     cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_STUDIO=n
+
+  - board: xiao_ble//zmk
+    shield: settings_reset
+    artifact-name: settings_reset_dongle
