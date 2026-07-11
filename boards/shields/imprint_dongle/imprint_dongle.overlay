@@ -1,7 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    /* Satisfies the matrix-transform assignment in the shared keymap */
+    chosen {
+        zmk,matrix-transform = &imprint_function_row;
+    };
+
     imprint_function_row: mock_transform {
         compatible = "zmk,matrix-transform";
         columns = <0>;
@@ -9,7 +12,6 @@
         map = <>;
     };
 
-    /* Satisfies the trackball hardware control block at the end of the keymap */
     trackball_peripheral_split: dummy_trackball_node {
         status = "disabled";
     };
