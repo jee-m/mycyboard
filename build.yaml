@@ -19,7 +19,7 @@
 ---
 include:
   - board: nice_nano//zmk
-    shield: imprint_dongle
+    shield: imprint_dongle dongle_display
 
   - board: assimilator-bt
     shield: imprint_left
