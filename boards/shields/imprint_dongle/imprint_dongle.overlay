@@ -4,7 +4,6 @@
 	chosen {
 		zmk,kscan = &mock_kscan;
 		zmk,matrix-transform = &imprint_function_row;
-		zephyr,display = &oled;
 	};
 
 	mock_kscan: mock_kscan_0 {
@@ -30,22 +29,5 @@
 
 	trackball_peripheral_split: dummy_trackball_node {
 		status = "disabled";
-	};
-};
-
-&xiao_i2c {
-	status = "okay";
-
-	oled: ssd1306@3c {
-		compatible = "solomon,ssd1306fb";
-		reg = <0x3c>;
-		width = <128>;
-		height = <64>;
-		segment-offset = <0>;
-		page-offset = <0>;
-		display-offset = <0>;
-		multiplex-ratio = <63>;
-		inversion-on;
-		prechargep = <0x22>;
 	};
 };
