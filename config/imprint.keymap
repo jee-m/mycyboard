@@ -4,9 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    chosen {
-        zmk,matrix-transform = &imprint_function_row;
-     };
+    chosen { zmk,matrix-transform = &imprint_function_row; };
 
     behaviors {
         win_d_ctsf_esc: win_d_ctsf_esc {
@@ -91,6 +89,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_GUI>, <&kp LG(Z)>;
         };
+
+        hanja_f_mac: hanja_f_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HANJA_F_MAC";
+            #binding-cells = <0>;
+            bindings = <&kp RA(ENTER)>, <&kp RG(F)>;
+        };
     };
 
     macros {
@@ -153,6 +158,7 @@
         refresh {
             bindings = <&kp F5>;
             key-positions = <29 17>;
+            layers = <0 1>;
         };
 
         ctrl_tab {
@@ -181,18 +187,45 @@
         command_c {
             bindings = <&kp LG(C)>;
             key-positions = <61 52>;
-            layers = <3>;
+            layers = <3 4 5 6>;
         };
 
         command_v {
             bindings = <&kp LG(V)>;
             key-positions = <52 53>;
-            layers = <3>;
+            layers = <3 4 5 6>;
         };
 
-        apple_layer {
-            bindings = <&tog 3>;
+        macos_layer {
+            bindings = <&to 5>;
             key-positions = <48 59>;
+        };
+
+        refresh_mac {
+            bindings = <&kp LG(R)>;
+            key-positions = <17 29>;
+            layers = <3 4 5 6>;
+        };
+
+        appswitch {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <17 16>;
+            layers = <5 6>;
+        };
+
+        mouse_mac {
+            bindings = <&tog 7>;
+            key-positions = <69 73>;
+        };
+
+        ipad_layer {
+            bindings = <&to 3>;
+            key-positions = <36 47>;
+        };
+
+        win_layer {
+            bindings = <&to 0>;
+            key-positions = <60 63>;
         };
     };
 
@@ -214,14 +247,14 @@
 
         Layer_1 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans              &trans                             &trans         &trans              &trans              &trans               &trans   &trans
-&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                             &kp HOME       &trans              &trans              &trans               &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans              &trans                             &kp END        &trans              &kp LG(UP_ARROW)    &trans               &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                        &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
-&sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                &kp PAGE_DOWN  &kp LEFT            &kp UP_ARROW        &kp RIGHT            &trans   &sys_reset
-                       &kp LC(LS(T))  &trans                                                                                               &kp DOWN            &kp RIGHT
-                                                 &trans              &trans               &trans        &trans         &trans              &trans
-                                                 &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_CLR    &trans         &trans              &trans
+&trans      &trans     &trans         &trans     &trans              &trans                               &trans         &trans              &trans              &trans               &trans   &trans
+&kp LA(F4)  &kp LC(W)  &trans         &trans     &trans              &kp F5                               &kp HOME       &trans              &trans              &trans               &kp F11  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans              &trans                               &kp END        &trans              &kp LG(UP_ARROW)    &trans               &trans   &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                          &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                  &kp PAGE_DOWN  &kp LEFT            &kp UP_ARROW        &kp RIGHT            &trans   &sys_reset
+                       &kp LC(LS(T))  &trans                                                                                                 &kp DOWN            &kp RIGHT
+                                                 &trans              &trans               &bt BT_CLR      &trans         &trans              &trans
+                                                 &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2    &trans         &trans              &trans
             >;
         };
 
@@ -253,19 +286,56 @@
 
         layer_4 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans                &trans                               &trans               &trans         &trans              &trans     &trans   &trans
-&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                            &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp F11  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans                &trans                               &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans   &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                          &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans   &kp C_MUTE
-&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans   &sys_reset
-                       &kp LS(LG(T))  &trans                                                                                                    &kp DOWN            &kp RIGHT
-                                                 &trans                &trans                 &trans        &trans               &trans         &trans
-                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_CLR    &trans               &trans         &trans
+&trans      &trans     &trans         &trans     &trans                &trans                                 &trans               &trans         &trans              &trans     &trans         &trans
+&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                              &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp RC(RG(F))  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans                &trans                                 &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans         &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans         &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans         &sys_reset
+                       &kp LS(LG(T))  &trans                                                                                                      &kp DOWN            &kp RIGHT
+                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans         &trans
+                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans         &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&none            &none   &none       &none   &none             &none                               &none          &none      &none            &none              &none     &none
+&esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
+&kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
+&kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
+&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &win_d_ctsf_esc
+                         &gui_z_mac  &mo 6                                                                                   &kp LBKT         &kp RIGHT_BRACKET
+                                             &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &hanja_f_mac   &mo 6      &kp RIGHT_SHIFT
+                                             &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)  &kp ENTER  &kp SPACE
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans      &trans     &trans         &trans     &trans                &trans                                 &trans               &trans         &trans              &trans     &trans         &trans
+&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                              &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp RC(RG(F))  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans                &trans                                 &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans         &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp RA(PG_UP)        &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans         &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp RA(PG_DN)        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans         &sys_reset
+                       &kp LS(LG(T))  &trans                                                                                                      &kp DOWN            &kp RIGHT
+                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans         &trans
+                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans         &trans
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &kp HOME        &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &kp END         &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &msc SCRL_UP    &mkp LCLK       &mkp MCLK       &mkp MB2         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
+                &trans  &trans                                                            &mmv MOVE_DOWN  &mmv MOVE_RIGHT
+                                &trans  &trans  &trans    &trans          &trans          &mkp LCLK
+                                &trans  &trans  &trans    &trans          &trans          &mkp MB2
             >;
         };
     };
 };
 
-&trackball_peripheral_split {
-    status = "disabled";
-};
+&trackball_peripheral_split { status = "disabled"; };
