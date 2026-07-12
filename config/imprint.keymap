@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -281,7 +282,7 @@
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))     &kp LC(TAB)                          &kp PAGE_UP    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans   &kp C_MUTE
 &sys_reset  &trans     &trans         &trans     &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                  &kp PAGE_DOWN  &kp LEFT            &kp UP_ARROW        &kp RIGHT            &trans   &sys_reset
                        &kp LC(LS(T))  &trans                                                                                                 &kp DOWN            &kp RIGHT
-                                                 &trans              &trans               &bt BT_CLR      &trans         &trans              &trans
+                                                 &out OUT_BLE        &out OUT_USB         &bt BT_CLR      &trans         &trans              &trans
                                                  &bt BT_SEL 0        &bt BT_SEL 1         &bt BT_SEL 2    &trans         &trans              &trans
             >;
         };
@@ -320,7 +321,7 @@
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp PAGE_UP          &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans  &kp C_MUTE
 &sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp PAGE_DOWN        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans  &sys_reset
                        &kp LS(LG(T))  &trans                                                                                                      &kp DOWN            &kp RIGHT
-                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans         &trans
+                                                 &out OUT_BLE          &out OUT_USB           &bt BT_CLR      &trans               &trans         &trans
                                                  &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans         &trans
             >;
         };
@@ -346,7 +347,7 @@
 &trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp RA(PG_UP)        &kp RC(RA(RS(LEFT_ARROW)))  &kp RC(RA(RS(DOWN_ARROW)))  &kp RC(RA(RS(RIGHT_ARROW)))  &trans         &kp C_MUTE
 &sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp RA(PG_DN)        &kp LEFT                    &kp UP_ARROW                &kp RIGHT                    &trans         &sys_reset
                        &kp LS(LG(T))  &trans                                                                                                                   &kp DOWN                    &kp RIGHT
-                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans                      &trans
+                                                 &out OUT_BLE          &out OUT_USB           &bt BT_CLR      &trans               &trans                      &trans
                                                  &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans                      &trans
             >;
         };
