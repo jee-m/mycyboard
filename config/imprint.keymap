@@ -96,6 +96,13 @@
             #binding-cells = <0>;
             bindings = <&kp RA(ENTER)>, <&kp RG(F)>;
         };
+
+        main_forceshut: main_forceshut {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MAIN_FORCESHUT";
+            #binding-cells = <0>;
+            bindings = <&kp RC(RA(RS(D)))>, <&kp RA(RG(ESC))>;
+        };
     };
 
     macros {
@@ -277,7 +284,7 @@
 &esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6          &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
 &kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y           &kp U      &kp I            &kp O              &kp P     &kp BSLH
 &kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H           &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
-&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N           &kp M      &kp COMMA        &kp DOT            &kp FSLH  &win_d_ctsf_esc
+&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N           &kp M      &kp COMMA        &kp DOT            &kp FSLH  &main_forceshut
                          &gui_z_mac  &mo 4                                                                                    &kp LBKT         &kp RIGHT_BRACKET
                                              &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &switchapp_mac  &mo 4      &kp RIGHT_SHIFT
                                              &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)   &kp ENTER  &kp SPACE
@@ -303,7 +310,7 @@
 &esc_tilde       &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
 &kp EQUAL        &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
 &kp TAB          &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
-&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &win_d_ctsf_esc
+&scrsav_capture  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &main_forceshut
                          &gui_z_mac  &mo 6                                                                                   &kp LBKT         &kp RIGHT_BRACKET
                                              &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &hanja_f_mac   &mo 6      &kp RIGHT_SHIFT
                                              &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)  &kp ENTER  &kp SPACE
@@ -312,14 +319,14 @@
 
         layer_6 {
             bindings = <
-&trans      &trans     &trans         &trans     &trans                &trans                                 &trans               &trans         &trans              &trans     &trans         &trans
-&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                              &kp LG(LEFT_ARROW)   &trans         &trans              &trans     &kp RC(RG(F))  &kp C_VOLUME_UP
-&trans      &trans     &trans         &trans     &trans                &trans                                 &kp LG(RIGHT_ARROW)  &trans         &kp LG(UP_ARROW)    &trans     &trans         &kp C_VOLUME_DOWN
-&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp RA(PG_UP)        &kp LG(GRAVE)  &kp LG(DOWN_ARROW)  &trans     &trans         &kp C_MUTE
-&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp RA(PG_DN)        &kp LEFT       &kp UP_ARROW        &kp RIGHT  &trans         &sys_reset
-                       &kp LS(LG(T))  &trans                                                                                                      &kp DOWN            &kp RIGHT
-                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans         &trans
-                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans         &trans
+&trans      &trans     &trans         &trans     &trans                &trans                                 &trans               &trans                      &trans                      &trans                       &trans         &trans
+&kp LG(Q)   &kp LG(W)  &trans         &trans     &trans                &kp LG(R)                              &kp LG(LEFT_ARROW)   &trans                      &trans                      &trans                       &kp RC(RG(F))  &kp C_VOLUME_UP
+&trans      &trans     &trans         &trans     &trans                &trans                                 &kp LG(RIGHT_ARROW)  &trans                      &kp RC(RA(RS(UP_ARROW)))    &trans                       &trans         &kp C_VOLUME_DOWN
+&trans      &trans     &trans         &mkp MCLK  &kp LC(LS(TAB))       &kp LC(TAB)                            &kp RA(PG_UP)        &kp RC(RA(RS(LEFT_ARROW)))  &kp RA(RS(RC(DOWN_ARROW)))  &kp RC(RA(RS(RIGHT_ARROW)))  &trans         &kp C_MUTE
+&sys_reset  &trans     &trans         &trans     &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)                  &kp RA(PG_DN)        &kp LEFT                    &kp UP_ARROW                &kp RIGHT                    &trans         &sys_reset
+                       &kp LS(LG(T))  &trans                                                                                                                   &kp DOWN                    &kp RIGHT
+                                                 &trans                &trans                 &bt BT_CLR      &trans               &trans                      &trans
+                                                 &bt BT_SEL 0          &bt BT_SEL 1           &bt BT_SEL 2    &trans               &trans                      &trans
             >;
         };
 
