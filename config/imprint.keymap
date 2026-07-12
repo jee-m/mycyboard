@@ -110,6 +110,13 @@
             #binding-cells = <0>;
             bindings = <&none>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
         };
+
+        koreng_save_mac: koreng_save_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KORENG_SAVE_MAC";
+            #binding-cells = <0>;
+            bindings = <&kp RC(SPACE)>, <&kp RG(S)>;
+        };
     };
 
     macros {
@@ -318,14 +325,14 @@
 
         layer_5 {
             bindings = <
-&none         &none   &none       &none   &none             &none                               &none          &none      &none            &none              &none     &none
-&esc_tilde    &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
-&kp EQUAL     &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
-&kp TAB       &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
-&scr_cap_mac  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &main_forceshut
-                      &gui_z_mac  &mo 6                                                                                   &kp LBKT         &kp RIGHT_BRACKET
-                                          &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &hanja_f_mac   &mo 6      &kp RIGHT_SHIFT
-                                          &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &kp LC(SPACE)  &kp ENTER  &kp SPACE
+&none         &none   &none       &none   &none             &none                               &none             &none      &none            &none              &none     &none
+&esc_tilde    &kp N1  &kp N2      &kp N3  &kp N4            &kp N5                              &kp N6            &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
+&kp EQUAL     &kp Q   &kp W       &kp E   &kp R             &kp T                               &kp Y             &kp U      &kp I            &kp O              &kp P     &kp BSLH
+&kp TAB       &kp A   &kp S       &kp D   &kp F             &kp G                               &kp H             &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
+&scr_cap_mac  &kp Z   &kp X       &kp C   &kp V             &kp B                               &kp N             &kp M      &kp COMMA        &kp DOT            &kp FSLH  &main_forceshut
+                      &gui_z_mac  &mo 6                                                                                      &kp LBKT         &kp RIGHT_BRACKET
+                                          &mt LSHIFT SPACE  &mt LCTRL ENTER  &alt_emoji_mac     &hanja_f_mac      &mo 6      &kp RIGHT_SHIFT
+                                          &kp BACKSPACE     &kp DELETE       &mt LG(X) LG(A)    &koreng_save_mac  &kp ENTER  &kp SPACE
             >;
         };
 
