@@ -13,6 +13,8 @@
             label = "WIN_D_CTSF_ESC";
             #binding-cells = <0>;
             bindings = <&kp LG(D)>, <&kp LC(LS(ESCAPE))>;
+
+            tapping-term-ms = <300>;
         };
 
         hanja_ctrlf: hanja_ctrlf {
@@ -20,6 +22,8 @@
             label = "HANJA_CTRLF";
             #binding-cells = <0>;
             bindings = <&kp LANGUAGE_2>, <&kp LC(F)>;
+
+            tapping-term-ms = <300>;
         };
 
         alt_emoji: alt_emoji {
@@ -27,6 +31,8 @@
             label = "ALT_EMOJI";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&kp LG(PERIOD)>;
+
+            tapping-term-ms = <300>;
         };
 
         koreng_ctrls: koreng_ctrls {
@@ -34,6 +40,8 @@
             label = "KORENG_CTRLS";
             #binding-cells = <0>;
             bindings = <&kp LANG_HANGEUL>, <&kp LC(S)>;
+
+            tapping-term-ms = <300>;
         };
 
         esc_tilde: esc_tilde {
@@ -61,6 +69,8 @@
             label = "SCRSAV_CAPTURE";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LA(LC(M))>, <&kp LG(PRINTSCREEN)>;
+
+            tapping-term-ms = <300>;
         };
 
         win_ctrlz: win_ctrlz {
@@ -68,6 +78,8 @@
             label = "WIN_CTRLZ";
             #binding-cells = <0>;
             bindings = <&kp LEFT_GUI>, <&kp LC(Z)>;
+
+            tapping-term-ms = <300>;
         };
 
         alt_emoji_mac: alt_emoji_mac {
@@ -75,6 +87,8 @@
             label = "ALT_EMOJI_MAC";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&kp RC(RG(SPACE))>;
+
+            tapping-term-ms = <300>;
         };
 
         switchapp_mac: switchapp_mac {
@@ -82,6 +96,8 @@
             label = "SWITCHAPP_MAC";
             #binding-cells = <0>;
             bindings = <&globe_left>, <&globe_right>;
+
+            tapping-term-ms = <300>;
         };
 
         gui_z_mac: gui_z_mac {
@@ -89,6 +105,8 @@
             label = "GUI_Z_MAC";
             #binding-cells = <0>;
             bindings = <&kp LEFT_GUI>, <&kp LG(Z)>;
+
+            tapping-term-ms = <300>;
         };
 
         hanja_f_mac: hanja_f_mac {
@@ -96,6 +114,8 @@
             label = "HANJA_F_MAC";
             #binding-cells = <0>;
             bindings = <&kp RA(ENTER)>, <&kp RG(F)>;
+
+            tapping-term-ms = <300>;
         };
 
         main_forceshut: main_forceshut {
@@ -103,6 +123,8 @@
             label = "MAIN_FORCESHUT";
             #binding-cells = <0>;
             bindings = <&kp RC(RA(RS(D)))>, <&kp RA(RG(ESC))>;
+
+            tapping-term-ms = <300>;
         };
 
         scr_cap_mac: scr_cap_mac {
@@ -110,6 +132,8 @@
             label = "SCR_CAP_MAC";
             #binding-cells = <0>;
             bindings = <&none>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
+
+            tapping-term-ms = <300>;
         };
 
         koreng_save_mac: koreng_save_mac {
@@ -117,6 +141,8 @@
             label = "KORENG_SAVE_MAC";
             #binding-cells = <0>;
             bindings = <&kp RC(SPACE)>, <&kp RG(S)>;
+
+            tapping-term-ms = <300>;
         };
     };
 
