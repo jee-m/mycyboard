@@ -182,7 +182,8 @@
         quote_combo {
             timeout-ms = <40>;
             key-positions = <44 45>;
-            bindings = <&kp RS(SQT)>;
+            bindings = <&tog 2>;
+            layers = <0 1 2>;
         };
 
         ctrlv_combo {
@@ -275,7 +276,7 @@
 
         ipad_layer {
             bindings = <&to 3>;
-            key-positions = <36 47>;
+            key-positions = <49 58>;
         };
 
         win_layer {
