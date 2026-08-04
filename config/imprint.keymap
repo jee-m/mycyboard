@@ -140,7 +140,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "KORENG_SAVE_MAC";
             #binding-cells = <0>;
-            bindings = <&kp RC(SPACE)>, <&kp RG(S)>;
+            bindings = <&kp LC(SPACE)>, <&kp RG(S)>;
 
             tapping-term-ms = <300>;
         };
