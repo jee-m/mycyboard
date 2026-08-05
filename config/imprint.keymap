@@ -174,7 +174,6 @@
             timeout-ms = <40>;
             key-positions = <44 45>;
             bindings = <&kp RS(APOSTROPHE)>;
-            layers = <0 1 2>;
         };
 
         ctrlv_combo {
