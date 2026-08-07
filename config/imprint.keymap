@@ -131,7 +131,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SCR_CAP_MAC";
             #binding-cells = <0>;
-            bindings = <&none>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
+            bindings = <&kp F17>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
 
             tapping-term-ms = <300>;
         };
