@@ -109,20 +109,20 @@
             tapping-term-ms = <300>;
         };
 
-        main_forceshut: main_forceshut {
+        dt_forceshut: dt_forceshut {
             compatible = "zmk,behavior-tap-dance";
-            label = "MAIN_FORCESHUT";
+            label = "DT_FORCESHUT";
             #binding-cells = <0>;
-            bindings = <&kp RC(RA(RS(D)))>, <&kp RA(RG(ESC))>;
+            bindings = <&kp RC(RIGHT_ARROW)>, <&kp RA(RG(ESC))>;
 
             tapping-term-ms = <300>;
         };
 
-        scr_cap_mac: scr_cap_mac {
+        dt_scr_cap_mac: dt_scr_cap_mac {
             compatible = "zmk,behavior-tap-dance";
-            label = "SCR_CAP_MAC";
+            label = "DT_SCR_CAP_MAC";
             #binding-cells = <0>;
-            bindings = <&kp F17>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
+            bindings = <&kp LC(LEFT_ARROW)>, <&kp LC(LA(M))>, <&kp LS(LG(N3))>;
 
             tapping-term-ms = <300>;
         };
@@ -276,14 +276,14 @@
 
         layer_5 {
             bindings = <
-&none         &none   &none           &none   &none             &none                                      &none          &none      &none            &none              &none     &none
-&esc_tilde    &kp N1  &kp N2          &kp N3  &kp N4            &kp N5                                     &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
-&kp EQUAL     &kp Q   &kp W           &kp E   &kp R             &kp T                                      &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
-&kp TAB       &kp A   &kp S           &kp D   &kp F             &kp G                                      &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
-&scr_cap_mac  &kp Z   &kp X           &kp C   &kp V             &kp B                                      &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &main_forceshut
-                      &control_z_mac  &mo 1                                                                                          &kp LBKT         &kp RIGHT_BRACKET
-                                              &mt LSHIFT SPACE  &mt LEFT_COMMAND ENTER  &alt_emoji_mac     &hanja_f_mac   &mo 1      &kp RIGHT_SHIFT
-                                              &kp BACKSPACE     &kp DELETE              &mt LG(X) LG(A)    &kp LC(SPACE)  &kp ENTER  &kp SPACE
+&none            &none   &none           &none   &none             &none                                      &none          &none      &none            &none              &none     &none
+&esc_tilde       &kp N1  &kp N2          &kp N3  &kp N4            &kp N5                                     &kp N6         &kp N7     &kp N8           &kp N9             &kp N0    &kp MINUS
+&kp EQUAL        &kp Q   &kp W           &kp E   &kp R             &kp T                                      &kp Y          &kp U      &kp I            &kp O              &kp P     &kp BSLH
+&kp TAB          &kp A   &kp S           &kp D   &kp F             &kp G                                      &kp H          &kp J      &kp K            &kp L              &kp SEMI  &kp SQT
+&dt_scr_cap_mac  &kp Z   &kp X           &kp C   &kp V             &kp B                                      &kp N          &kp M      &kp COMMA        &kp DOT            &kp FSLH  &dt_forceshut
+                         &control_z_mac  &mo 1                                                                                          &kp LBKT         &kp RIGHT_BRACKET
+                                                 &mt LSHIFT SPACE  &mt LEFT_COMMAND ENTER  &alt_emoji_mac     &hanja_f_mac   &mo 1      &kp RIGHT_SHIFT
+                                                 &kp BACKSPACE     &kp DELETE              &mt LG(X) LG(A)    &kp LC(SPACE)  &kp ENTER  &kp SPACE
             >;
         };
 
